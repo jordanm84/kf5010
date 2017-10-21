@@ -11,17 +11,23 @@
 #include "console.h"
 #include "tunnel_controller.h"
 
+/**
+ * @brief some constant definitions
+ */
 enum {
-    N_VEHICLES = 20,         /* number of vehicles in the system */
-    APPROACH_LB = 1000000,   /* lower bound on time of approach to tunnel */
-    APPROACH_UB = 3000000,   /* upper bound on time of approach to tunnel */
-    IN_TUNNEL_LB = 500000,   /* lower bound on time travelling in tunnel */
-    IN_TUNNEL_UB = 1500000,  /* upper bound on time travelling in tunnel */
+    N_VEHICLES = 20,         /** number of vehicles in the system */
+    APPROACH_LB = 1000000,   /** lower bound on time of approach to tunnel */
+    APPROACH_UB = 3000000,   /** upper bound on time of approach to tunnel */
+    IN_TUNNEL_LB = 500000,   /** lower bound on time travelling in tunnel */
+    IN_TUNNEL_UB = 1500000,  /** upper bound on time travelling in tunnel */
 };
 
 static void *vehicle_thr(void *arg);
 unsigned int scale_random(double r, int l, int u);
 
+/**
+ * @brief Creates the vehicle threads and then loops forever
+ */
 int main (void) {
     int rc;
     unsigned long i;
