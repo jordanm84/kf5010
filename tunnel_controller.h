@@ -1,3 +1,6 @@
+#ifndef _TUNNEL_CONTROLLER_H
+#define _TUNNEL_CONTROLLER_H
+
 typedef enum {NORTH, SOUTH} direction_t;
 
 /**
@@ -19,3 +22,4 @@ void exit_tunnel(direction_t dir);
  */
 direction_t opposite(direction_t dir);
 
+#endif
